@@ -67,8 +67,6 @@ public class Consola{
 			try {
 				mostrarMenu();
 				
-				System.out.println(menuProductos);
-				
 				int opcion = 0;
 				try {
 					opcion = Integer.parseInt(input("Ingrese la opcion"));

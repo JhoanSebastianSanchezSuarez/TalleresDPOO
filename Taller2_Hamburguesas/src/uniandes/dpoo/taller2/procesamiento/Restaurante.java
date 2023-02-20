@@ -119,23 +119,16 @@ public class Restaurante {
 		
 		Producto elProducto = null;
 		
-		System.out.println(listaProductos.size());
 		
 		for(int i = 0; i < listaProductos.size() && elProducto == null ; i ++){
 			
-			System.out.println(nombre);
 			Producto unProducto = listaProductos.get(i);
 			String unProductoName = unProducto.getNombre();
 
 			if(unProductoName.equals(nombre)){
-				System.out.println("Hola");
 				elProducto = unProducto; 
 			}
-			else {
-				System.out.println("No funciono");
-				System.out.println(nombre);
-				System.out.println(unProductoName);
-			}
+			
 		}
 	return elProducto;}
 	
