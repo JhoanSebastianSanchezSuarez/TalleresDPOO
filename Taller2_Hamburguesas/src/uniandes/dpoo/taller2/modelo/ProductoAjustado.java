@@ -12,7 +12,7 @@ public class ProductoAjustado implements Producto{
 	
 	private ArrayList<Ingrediente> Eliminaciones = new ArrayList<Ingrediente>();
 	
-	public ProductoAjustado(ProductoMenu base) {
+	public ProductoAjustado(Producto base) {
 		
 		precioBase = base.getPrecio();
 		

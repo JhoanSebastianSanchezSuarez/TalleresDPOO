@@ -26,8 +26,9 @@ public class Combo implements Producto {
 		//Retorna el precio del combo recorriendo la lista de productios.
 		int totalcombo = 0;
 		for(int x = 0; x<productos.size();x++) {
+
+			double valorfloat = (productos.get(x).getPrecio())*descuento;
 			
-			double valorfloat = (productos.get(x).getPrecio())*this.descuento;
 			int valor = (int)valorfloat;
 			
 			totalcombo += valor;
