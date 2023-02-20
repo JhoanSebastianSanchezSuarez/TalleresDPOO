@@ -65,34 +65,44 @@ public class Pedido {
 		return totalpedido;
 		}
 	
-	private String generarTextoFactura() {
+	private ArrayList<String> generarTextoFactura() {
 		
-		String texto = "Restaurante\n";
-		texto.concat("Pedido: "+getIdPedido()+"\n");
-		texto.concat("Cliente: "+this.nombreCliente+"\n");
-		texto.concat("Direccion: "+this.direccionCliente+"\n");
-		texto.concat("--------Productos--------");
+		ArrayList<String> texto = new ArrayList<String>();
+		texto.add("Restaurante\n");
+		texto.add("Pedido: "+getIdPedido()+"\n");
+		texto.add("Cliente: "+this.nombreCliente+"\n");
+		texto.add("Direccion: "+this.direccionCliente+"\n");
+		texto.add("--------Productos--------\n");
 		for(int i=0; i<itemsPedido.size(); i++) {
-			texto.concat(itemsPedido.get(i).generarTextoFactura()+"\n");
+			texto.add(itemsPedido.get(i).generarTextoFactura()+"\n");
 			}
-		texto.concat("Total neto: "+getPrecioNetoPedido()+"\n");
-		texto.concat("IVA: "+getPrecioIVAPedido()+"\n");
-		texto.concat("Total: "+getPrecioTotalPedido()+"\n");
+		texto.add("Total neto: "+getPrecioNetoPedido()+"\n");
+		texto.add("IVA: "+getPrecioIVAPedido()+"\n");
+		texto.add("Total: "+getPrecioTotalPedido()+"\n");
 		return texto;
 		}
 	
 	public void guardarFactura(){
 		try{
-		File archivo = new File("./data/facturas/"+getIdPedido());
+		File archivo = new File("./data/facturas/"+getIdPedido()+".txt");
 		FileWriter escritor = new FileWriter(archivo);
 		
-		escritor.write(generarTextoFactura());
+		ArrayList<String> texto = generarTextoFactura();
+		
+		for(int x = 0; x < texto.size(); x++) {
+		escritor.write(texto.get(x));
+		}
 		escritor.close();
 		}
 		catch(IOException e) {
 			System.out.println("Ha ocurrido un error al guardar la factura");
 			e.printStackTrace();
 		}
+	}
+	
+	public String toString() {
+		
+		return idPedido +" "+ nombreCliente +" "+ direccionCliente +" "+ itemsPedido;
 	}
 		
 }

@@ -153,8 +153,8 @@ public class Consola{
 	}
 	
 	public static void ejecutarNuevoPedido() {
-		String nombreCliente = input("Ingrese el nombre del cliente: ");
-		String direccionCliente = input("Ingrese la direccion del cliente: ");
+		String nombreCliente = input("Ingrese el nombre del cliente");
+		String direccionCliente = input("Ingrese la direccion del cliente");
 		restaurante.iniciarPedido(nombreCliente, direccionCliente);
 		}
 	
@@ -189,13 +189,13 @@ public class Consola{
 				}
 			restaurante.getPedidoEnCurso().agregarProducto(productoModAAgregar);
 
-		}else {
+		}else if(deseaModificarProducto == 0){
+			restaurante.getPedidoEnCurso().agregarProducto(productoAAgregar);
+		}else
+		{
 			System.out.println("Ingrese una opcion valida (Recuerde que los combos no se pueden modificar)");
 		}
-		
-		restaurante.getPedidoEnCurso().agregarProducto(productoAAgregar);
-		
-		}
+	}
 	
 	public static void ejecutarCerrarYGuardarPedido() {
 		

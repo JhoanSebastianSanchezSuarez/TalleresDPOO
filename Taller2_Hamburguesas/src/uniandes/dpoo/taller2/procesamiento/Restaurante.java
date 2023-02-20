@@ -165,7 +165,7 @@ public class Restaurante {
 	
 	public Pedido getPedidoEnCurso() {
 		
-		return pedidoActual;
+		return this.pedidoActual;
 	}
 	
 	public Restaurante() {
