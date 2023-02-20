@@ -28,7 +28,7 @@ public class Combo implements Producto {
 		int totalcombo = 0;
 		for(int x = 0; x<productos.size();x++) {
 			
-			double valorfloat = (productos.get(x).getPrecio())*descuento;
+			double valorfloat = (productos.get(x).getPrecio())*descuento/100;
 			
 			int valor = (int)valorfloat;
 			
