@@ -79,17 +79,17 @@ public class ProductoAjustado implements Producto{
 		
 		if (Adiciones.size()>0) {
 			for(int x=0; x<Adiciones.size(); x++) {
-				tempa.concat(Adiciones.get(x).getNombre());
+				tempa += (Adiciones.get(x).getNombre());
 				if ((Adiciones.size()!= 1) || (Adiciones.size()!= x)){
-					tempa.concat(", ");
+					tempa += ", ";
 				}
 			}
 		}
 		if (Eliminaciones.size()>0) {
 			for(int x=0; x<Eliminaciones.size();x++) {
-				tempb.concat(Eliminaciones.get(x).getNombre());
+				tempb += (Eliminaciones.get(x).getNombre());
 				if ((Eliminaciones.size()!= 1) || (Eliminaciones.size()!= x)){
-					tempb.concat(", ");
+					tempb += ", ";
 				}
 			}
 		}
