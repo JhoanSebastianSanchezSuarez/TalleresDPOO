@@ -208,7 +208,7 @@ public class Consola{
 		
 		String nombreArchivo = input("Ingrese el nombre del archivo");
 		
-		File archivo = new File ("./data/facturas/"+nombreArchivo);
+		File archivo = new File ("./data/facturas/"+nombreArchivo+".txt");
 
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(archivo));
@@ -216,7 +216,7 @@ public class Consola{
 			
 			while (linea != null) {
 				
-				texto.concat(linea);
+				texto += linea +"\n";
 				
 				linea = br.readLine();
 				
