@@ -25,17 +25,24 @@ public class Combo implements Producto {
 	
 	public int getPrecio() {
 		//Retorna el precio del combo recorriendo la lista de productios.
-		int totalcombo = 0;
+		int totalDescuentoCombo = 0;
+		int totalCombo = 0;
 		for(int x = 0; x<productos.size();x++) {
 			
-			double valorfloat = (productos.get(x).getPrecio())*descuento/100;
+			double valorFloat = (productos.get(x).getPrecio())*descuento/100;
 			
-			int valor = (int)valorfloat;
+			double valorDouble = (productos.get(x).getPrecio());
 			
-			totalcombo += valor;
+			int valorDoub = (int)valorDouble;
+			
+			int valor = (int)valorFloat;
+			
+			totalDescuentoCombo += valor;
+			
+			totalCombo += valorDoub;
 		}
 		
-		return totalcombo;
+		return totalCombo-totalDescuentoCombo;
 	}
 
 	public String getNombre() {
