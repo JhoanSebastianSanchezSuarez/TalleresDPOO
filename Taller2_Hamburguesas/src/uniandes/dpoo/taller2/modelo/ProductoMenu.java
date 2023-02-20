@@ -19,7 +19,7 @@ public class ProductoMenu implements Producto
 	@Override
 	public String getNombre() {
 		// Retorna el nombre del producto.
-		return Nombre;
+		return this.Nombre;
 	}
 
 	@Override
@@ -27,6 +27,11 @@ public class ProductoMenu implements Producto
 		// Retorna cadena con el precio base y el nombre del producto.
 		String Texto = "$"+PrecioBase+" "+Nombre;
 		return Texto;
+	}
+	
+	public String toString() {
+		
+		return "Nombre: "+this.Nombre+ "Precio base: "+this.PrecioBase;
 	}
 
 }

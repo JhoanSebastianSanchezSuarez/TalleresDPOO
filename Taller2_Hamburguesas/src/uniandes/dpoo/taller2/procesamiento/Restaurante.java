@@ -64,11 +64,10 @@ public class Restaurante {
 				String stringDescuento = valores[1].replace("%", "");
 				
 				double ndescuento = Double.parseDouble(stringDescuento);
-				
+
 				Combo comboAgregado = new Combo(ndescuento, nproducto);
 				
 				for(int i = 2; i<valores.length; i++) {
-					
 					Producto productoParaCombo = buscarProductoMenuNombre(menu, valores[i]);
 					comboAgregado.agregarItemACombo(productoParaCombo);
 				}
@@ -116,16 +115,26 @@ public class Restaurante {
 		}
 	}
 	
-	private static Producto buscarProductoMenuNombre(ArrayList<Producto> listaProductos, String nombre) {
+	private Producto buscarProductoMenuNombre(ArrayList<Producto> listaProductos, String nombre) {
 		
 		Producto elProducto = null;
 		
-		for(int i = listaProductos.size(); i >= 0 && elProducto != null ; i--) {
+		System.out.println(listaProductos.size());
+		
+		for(int i = 0; i < listaProductos.size() && elProducto == null ; i ++){
 			
+			System.out.println(nombre);
 			Producto unProducto = listaProductos.get(i);
-			
-			if(unProducto.getNombre().equals(nombre)) {
+			String unProductoName = unProducto.getNombre();
+
+			if(unProductoName.equals(nombre)){
+				System.out.println("Hola");
 				elProducto = unProducto; 
+			}
+			else {
+				System.out.println("No funciono");
+				System.out.println(nombre);
+				System.out.println(unProductoName);
 			}
 		}
 	return elProducto;}

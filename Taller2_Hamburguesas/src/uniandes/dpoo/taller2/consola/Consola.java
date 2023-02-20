@@ -66,6 +66,7 @@ public class Consola{
 			
 			try {
 				mostrarMenu();
+				
 				System.out.println(menuProductos);
 				
 				int opcion = 0;

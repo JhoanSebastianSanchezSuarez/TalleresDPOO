@@ -18,15 +18,17 @@ public class Combo implements Producto {
 	
 	public void agregarItemACombo(Producto itemCombo) {
 		//Agrega un item al combo.
+		if (itemCombo != null){
 		productos.add(itemCombo);
-		
+		}
 	}
 	
 	public int getPrecio() {
 		//Retorna el precio del combo recorriendo la lista de productios.
 		int totalcombo = 0;
 		for(int x = 0; x<productos.size();x++) {
-
+			
+			System.out.println(productos.get(x));
 			double valorfloat = (productos.get(x).getPrecio())*descuento;
 			
 			int valor = (int)valorfloat;
@@ -45,6 +47,10 @@ public class Combo implements Producto {
 	public String generarTextoFactura() {
 		// Retorna una cadena con el texto para la factura
 		return "$"+getPrecio()+" "+nombreCombo;
+	}
+	
+	public String toString() {
+		return "Nombre: "+ nombreCombo +" Precio: "+ this.getPrecio()+ " Productos: "+productos;
 	}
 	
 	
