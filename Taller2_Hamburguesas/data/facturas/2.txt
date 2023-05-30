@@ -1,0 +1,9 @@
+Restaurante
+Pedido: 2
+Cliente: Dario Lopez
+Direccion: Calle 19 #29-19
+--------Productos--------
+$15000 wrap de pollo
+Total neto: 15000
+IVA: 2850
+Total: 17850
