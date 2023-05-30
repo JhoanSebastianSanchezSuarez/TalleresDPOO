@@ -151,7 +151,7 @@ public class Restaurante {
 		cargarCombos(archivoCombos);
 	}
 	
-	public void iniciarPedido(String nombreCliente, String direccionCliente) {
+	public void iniciarPedido(String nombreCliente, String direccionCliente) throws IOException {
 		
 		pedidoActual = new Pedido(nombreCliente, direccionCliente);
 		

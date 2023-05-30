@@ -152,7 +152,7 @@ public class Consola{
 			conteoMenu ++;}}
 	}
 	
-	public static void ejecutarNuevoPedido() {
+	public static void ejecutarNuevoPedido() throws IOException {
 		String nombreCliente = input("Ingrese el nombre del cliente");
 		String direccionCliente = input("Ingrese la direccion del cliente");
 		restaurante.iniciarPedido(nombreCliente, direccionCliente);

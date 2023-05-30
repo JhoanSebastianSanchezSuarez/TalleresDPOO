@@ -1,0 +1,9 @@
+Restaurante
+Pedido: 1
+Cliente: Luiz
+Direccion: Call 9 sur 6-4
+--------Productos--------
+$23000 casera
+Total neto: 23000
+IVA: 4370
+Total: 27370
